@@ -48,7 +48,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true , index: true|
+|group_name|string|null: false, index: true|
 
 ### Association
 - has_many: massages
