@@ -37,17 +37,30 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|users_name|integer|null: false, unique: true , index: true|
+|users_name|string|null: false, unique: true , index: true|
+|email|string|null: false|
 
 ### Association
 - has_many: group_users
 - has_many: groups, through: group_users
+- has_many: massages
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|integer|null: false, unique: true , index: true|
+|group_name|string|null: false, unique: true , index: true|
 
 ### Association
+- has_many: massages
 - has_many: group_users
 - has_many: users , through : group_users
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|message|text|null: false|
+|image|text||
+
+### Association
+- belongs_to: users
+- belongs_to: groups
