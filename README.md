@@ -39,6 +39,7 @@ Things you may want to cover:
 |------|----|-------|
 |users_name|integer|null: false, unique: true , index: true|
 
+### Association
 - has_many: group_users
 - has_many: groups, through: group_users
 
@@ -47,5 +48,6 @@ Things you may want to cover:
 |------|----|-------|
 |group_name|integer|null: false, unique: true , index: true|
 
+### Association
 - has_many: group_users
 - has_many: users , through : group_users
