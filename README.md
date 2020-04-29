@@ -38,7 +38,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |users_name|string|null: false, unique: true , index: true|
-|email|string|null: false|
+|email|string|null: false , unique: true|
 
 ### Association
 - has_many: group_users
