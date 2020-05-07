@@ -1,0 +1,60 @@
+.side_bar{
+  width: 300px;
+  &__top{
+    background-color: #253141;
+    height: 100px;
+    position: relative;
+    &__contents{
+      height: 20px;
+      width: 260px;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      display: flex;
+      &__name{
+        width: 200px;
+        justify-content: flex-start;
+        line-height: 20px;
+        color: white;
+      }
+      &__btns{
+        width: 60px;
+        justify-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        &__icon{
+        color: white;
+        text-decoration: none;
+        align-self: center;
+          &--edit{
+            margin-right: 5px;
+          }
+      }
+      }
+    }
+  }
+  &__main{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    color: white;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    &__group{
+    padding-top: 20px;
+    padding-bottom: 40px;
+      &__name{
+        font-size: 15px;
+        line-height: 15px;
+      }
+      &__message{
+        font-size: 11px;
+        line-height: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
