@@ -2,34 +2,21 @@
   .main_chat__header
     .main_chat__header__component
       .main_chat__header__component__groupname
-        ハンドボール
-      .main_chat__header__component__member
-        Member：おじさん
-    .main_chat__header__send
-      =link_to "#" ,class: "main_chat__header__send--btn" do
-        Edit
+        = @group.name
+      %ul.main_chat__header__component__member
+        Member：
+        %li.main_chat__header__component__member-name
+          - @group.users.each do |user|
+            =user.name
+    = link_to edit_group_path(@group), class: "main_chat__header__send" do
+      Edit
   .main_chat__center
-    .main_chat__center__messages_list
-      .main_chat__center__messages_list__info
-        .main_chat__center__messages_list__info__name
-          おじさん
-        .main_chat__center__messages_list__info__date
-          2020/5/7(Thu) 14:00:00
-      .main_chat__center__messages_list__message
-        あああああああああ
-    .main_chat__center__messages_list
-      .main_chat__center__messages_list__info
-        .main_chat__center__messages_list__info__name
-          おじさん
-        .main_chat__center__messages_list__info__date
-          2020/5/7(Thu) 14:00:00
-      .main_chat__center__messages_list__message
-        ああああああああああああ
+    = render @messages
   .main_chat__bottom
-    %form.main_chat__bottom__form
-      .main_chat__bottom__form__input_box
-        %input{"placeholder": "type a message", "type": "text", class: "main_chat__bottom__form__input_box__text"}
-        %label{class: "main_chat__bottom__form__input_box__image"}
-          =icon('fas',"image")
-          %input{"type": "file",class: "main_chat__bottom__form__input_box__file"}
-      %input{"name": "commit", "type": "submit", "value": "Send", class: "main_chat__bottom__form__submit_btn"}
+    = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
+      .main_chat__bottom__form
+        = f.text_field :content, class: 'main_chat__bottom__form__input_box__text', placeholder: 'type a message'
+        = f.label :image, class: 'main_chat__bottom__form__input_box__image' do
+          = icon('far','image')
+          = f.file_field :image, class: 'main_chat__bottom__form__input_box__image__file'
+        = f.submit 'Send', class: 'main_chat__bottom__form__submit_btn'

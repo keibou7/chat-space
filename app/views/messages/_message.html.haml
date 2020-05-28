@@ -1,0 +1,12 @@
+.main_chat__center__messages{data: {message: {id: message.id}}}
+.main_chat__center__messages_list{data: {message: {id: message.id}}}
+  .main_chat__center__messages_list__info
+    .main_chat__center__messages_list__info__name
+      = message.user.name
+    .main_chat__center__messages_list__info__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main_chat__center__messages_list__message
+    - if message.content.present?
+      %p.main_chat__center__messages_list__message__contents
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?

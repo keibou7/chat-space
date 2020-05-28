@@ -15,6 +15,8 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
+      config.i18n.default_locale = :ja
+      config.time_zone = 'Tokyo'
     end
 
     # Settings in config/environments/* take precedence over those specified here.

@@ -19,6 +19,7 @@
         justify-content: flex-start;
         line-height: 20px;
         color: white;
+        font-weight: bold;
       }
       &__btns{
         width: 60px;
@@ -39,11 +40,13 @@
   &__main{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    color: white;
-    font-weight: bold;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
+    overflow: scroll;
     &__group{
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
     padding-top: 20px;
     padding-bottom: 40px;
       &__name{
