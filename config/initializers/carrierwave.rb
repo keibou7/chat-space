@@ -14,5 +14,4 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'backet-keibou'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/backet-keibou'
-  config.fog_public = false
 end
